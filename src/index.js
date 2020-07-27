@@ -1,3 +1,9 @@
 import './styles.css';
+import { checkTheme, switchTheme } from './js/site-themes'
 
-console.log('aloh!');
+const refs = {
+    tumbler: document.querySelector('.js-switch-input'),
+}
+
+checkTheme(refs.tumbler)
+refs.tumbler.addEventListener('change', switchTheme)
