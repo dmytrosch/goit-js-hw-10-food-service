@@ -1,15 +1,17 @@
+import sitePreferences from './site-preferences';
+
 const Theme = {
     LIGHT: 'light-theme',
     DARK: 'dark-theme',
 };
 
 function checkTheme(tumbler) {
-    const value = localStorage.getItem('theme');
-    if (value === Theme.DARK) {
+    const preferencesObj = sitePreferences.readPreferences();
+    if (preferencesObj.theme === Theme.DARK) {
         switchToDark();
-        tumbler.setAttribute('checked', true)
+        tumbler.setAttribute('checked', true);
     }
-    if (value === Theme.LIGHT) {
+    if (preferencesObj.theme === Theme.LIGHT) {
         switchToLight();
     } else {
         return;
@@ -33,7 +35,9 @@ function switchTheme(event) {
 }
 
 function saveThemePreference(theme) {
-    localStorage.setItem('theme', theme);
+    sitePreferences.preferences.theme = theme;
+    sitePreferences.savePreferencesInLocalStorage()
+
 }
 
 function switchToLight() {
