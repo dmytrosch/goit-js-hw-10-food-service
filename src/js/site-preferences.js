@@ -13,8 +13,8 @@ export default {
             this.preferences = JSON.parse(string);
         }
     },
-    readPreferences(){
-        this.getPreferencesFromLocalStorage()
-        return this.preferences
-    }
+    readPreferences() {
+        this.getPreferencesFromLocalStorage();
+        return this.preferences;
+    },
 };
