@@ -127,6 +127,14 @@ body.dark-theme {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 24px;
 }
+.menu__item{
+  transform: translate(0, 0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.menu__item--lefted{
+  transform: translate(-1000px, 0);
+}
 
 .card {
   position: relative;
