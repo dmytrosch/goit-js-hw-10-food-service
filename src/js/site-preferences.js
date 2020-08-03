@@ -12,9 +12,6 @@ export default {
         if (string) {
             this.preferences = JSON.parse(string);
         }
-    },
-    readPreferences() {
-        this.getPreferencesFromLocalStorage();
         return this.preferences;
     },
 };

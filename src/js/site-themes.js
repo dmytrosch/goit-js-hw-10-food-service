@@ -6,10 +6,10 @@ const Theme = {
 };
 
 function checkTheme(tumbler) {
-    const preferencesObj = sitePreferences.readPreferences();
+    const preferencesObj = sitePreferences.getPreferencesFromLocalStorage();
     if (preferencesObj.theme === Theme.DARK) {
         switchToDark();
-        tumbler.setAttribute('checked', true);
+        tumbler.checked = true;
     }
     if (preferencesObj.theme === Theme.LIGHT) {
         switchToLight();
@@ -36,8 +36,7 @@ function switchTheme(event) {
 
 function saveThemePreference(theme) {
     sitePreferences.preferences.theme = theme;
-    sitePreferences.savePreferencesInLocalStorage()
-
+    sitePreferences.savePreferencesInLocalStorage();
 }
 
 function switchToLight() {
